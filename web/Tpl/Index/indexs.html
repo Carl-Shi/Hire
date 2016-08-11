@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <title>{$title}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="{key}" name="description" />
+    <meta content="{des}" name="author" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->              
+    <link href="__ROOT__/Public/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="__ROOT__/Public/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="__ROOT__/Public/css/mall.css" rel="stylesheet" type="text/css"/>
+    <!-- END GLOBAL MANDATORY STYLES -->
+   
+    <!-- BEGIN THEME STYLES --> 
+    <!--[if lt IE 9]>
+        <script src="__ROOT__/Public/js/html5shiv.min.js"></script>
+        <script src="__ROOT__/Public/js/respond.min.js"></script>
+    <![endif]-->
+    <!-- END THEME STYLES -->
+    
+     <script src="__ROOT__/Public/js/jquery.js"></script>
+     <script src="__ROOT__/Public/js/bootstrap.min.js"></script>    
+</head>
+
+<!-- BEGIN BODY -->
+<body>
+    <!-- BEGIN NAV -->
+    <include file="Public:header" />
+    <!-- END NAV -->
+
+
+    <!-- BEGIN CONTAINER -->
+    <div class="container"> 
+      <nav class="navbar bs-docs-nav" role="navigation" style="margin-top:10px;">
+        <div class="col-lg-10 col-md-10 col-xs-12">
+          <form class="form-inline" style="margin-top: 8px" role="form" method="post" action="{:U('Index/indexs/')}">
+            <div class="form-group col-xs-8">
+              <label class="sr-only" for="exampleInputPassword2"></label>
+              <input type="text" class="form-control" name="id" placeholder="">
+            </div>
+            <button type="submit" style="margin-top: 3px" class="icon-search">
+              <span class="visuallyhidden">search</span>
+            </button>
+          </form>
+        </div>
+      </nav>
+
+      <div class="row">
+        <div class="col-md-3 col-sm-6 hidden-xs">
+          <include file="Public:cleft" />
+        </div>
+      
+        <div class="col-md-9 hidden-sm">
+          <div class="row top5" >
+            <volist name="foodlist" id="vo" offset="0" length='9'>
+            <div class="col-sm-4 simpleCart_shelfItem row-padding">
+              <div class="thumbnail i_list">
+                <a href="{:U('Product/index','id='.$vo['fid'])}" >
+                  <div class="caption">
+                    <h3 class="item_name" align="left">ID: {$vo.fname}</h2>
+                    <h3 class="item_name" align="left">职位: {$vo.ftitle}</h2>
+                    <h3 class="item_name" align="left">地点: {$vo.fpic}</h2>
+                  </div>
+                </a>
+              </div>
+            </div>
+            </volist>
+          </div>
+
+          <ul class="pagination">{$page}</ul>
+        </div>
+      </div>
+    </div>
+  
+    <!-- BEGIN FOOTER -->
+    <include file="Public:foot" />
+    <!-- END FOOTER -->
+</body>
+<!-- END BODY -->
+
+</html>

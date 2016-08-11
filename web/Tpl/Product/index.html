@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <title>{$title}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="{key}" name="description" />
+    <meta content="{des}" name="author" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->              
+    <link href="__ROOT__/Public/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="__ROOT__/Public/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="__ROOT__/Public/css/mall.css" rel="stylesheet" type="text/css"/>
+    <!-- END GLOBAL MANDATORY STYLES -->
+   
+    <!-- BEGIN THEME STYLES --> 
+    <!--[if lt IE 9]>
+        <script src="__ROOT__/Public/js/html5shiv.min.js"></script>
+        <script src="__ROOT__/Public/js/respond.min.js"></script>
+    <![endif]-->
+    <!-- END THEME STYLES -->
+    
+     <script src="__ROOT__/Public/js/jquery.js"></script>
+     <script src="__ROOT__/Public/js/bootstrap.min.js"></script>    
+</head>
+
+<!-- BEGIN BODY -->
+<body>
+    <!-- BEGIN NAV -->
+    <include file="Public:header" />
+    <!-- END NAV -->
+
+    <!-- BEGIN CONTAINER -->
+    <div class="container">
+      <div class="row">
+        <div class="col-md-3 hidden-xs">
+          <include file="Public:cleft" />
+        </div>
+
+        <div class="col-md-9 ">
+          <div class="row top5" >
+            <div class="col-md-6 simpleCart_shelfItem">
+              <h1 style="font-size:20px;" class="item_name">{$fooditem.fname}</h1>
+              <hr> 
+              <div class="well ">
+                <h1 style="font-size:15px;" class="item_name">职位：{$fooditem.ftitle}</h1>
+                <h1 style="font-size:15px;" class="item_name">地点：{$fooditem.fpic}</h1>
+              </div>
+              <div class="clearfix"></div>
+            </div>        
+          </div>
+        </div>             
+
+        <div style="min-height:400px;">
+          <ul role="tablist" class="nav nav-tabs" id="myTab">
+            <li class="active"><a data-toggle="tab" role="tab" href="#home">职位介绍</a></li>    
+          </ul>
+          <div class="tab-content" id="myTabContent">
+            <div id="home" class="tab-pane fade in active">
+              <div style="margin-top:30px;line-height:30px;">
+                <pre>{$fooditem.fcontent}</pre>
+              </div> 
+            </div>
+          </div>
+        </div>    
+      </div>
+    </div>
+
+    <!-- BEGIN FOOTER -->
+    <include file="Public:foot" />
+    <!-- END FOOTER -->
+</body>
+<!-- END BODY -->
+
+</html>

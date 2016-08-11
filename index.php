@@ -9,8 +9,7 @@ define('THINK_PATH', './thinkphp/');
  */
 define('APP_NAME', 'web');
 define('APP_PATH', './web/');
-define('RUNTIME_PATH', './data/');
-define('TMPL_PATH', './templates/');
+define('APP_DEBUG', true);
 
 require(THINK_PATH."/ThinkPHP.php");
 ?>
