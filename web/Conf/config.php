@@ -7,6 +7,8 @@ $array =array(
     'URL_MODEL'=>0,
     'DEFAULT_THEME'=> '',
 
+    "title"=> 'EMC招聘',
+    
     'TMPL_ACTION_ERROR'     => APP_PATH.'Tpl/404/error.html', // 默认错误跳转对应的模板文件
     'TMPL_ACTION_SUCCESS'   => APP_PATH.'Tpl/404/jump.html', // 默认成功跳转对应的模板文件
     'TMPL_EXCEPTION_FILE'   => APP_PATH.'Tpl/404/think_exception.tpl',// 异常页面的模板文件

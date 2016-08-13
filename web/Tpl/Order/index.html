@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <title>{$title}</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="{key}" name="description" />
+    <meta content="{des}" name="author" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->              
+    <link href="__ROOT__/Public/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="__ROOT__/Public/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"/>
+    <link href="__ROOT__/Public/css/mall.css" rel="stylesheet" type="text/css"/>
+    <!-- END GLOBAL MANDATORY STYLES -->
+   
+    <!-- BEGIN THEME STYLES --> 
+    <!--[if lt IE 9]>
+        <script src="__ROOT__/Public/js/html5shiv.min.js"></script>
+        <script src="__ROOT__/Public/js/respond.min.js"></script>
+    <![endif]-->
+    <!-- END THEME STYLES -->
+    
+     <script src="__ROOT__/Public/js/jquery.js"></script>
+     <script src="__ROOT__/Public/js/bootstrap.min.js"></script>    
+</head>
+
+<!-- BEGIN BODY -->
+<body>
+    <!-- BEGIN NAV -->
+    <include file="Public:header" />
+    <!-- END NAV -->
+
+    <!-- BEGIN CONTAINER -->
+    <div class="container">
+      <nav class="navbar bs-docs-nav" role="navigation" style="margin-top:10px;">
+        <div class="col-lg-10 col-md-10 col-xs-12">
+          <h1 style="font-size:20px;" class="item_name">您的基本信息</h1>
+        </div>
+      </nav>
+
+      <form class="form-horizontal"role="form" enctype="multipart/form-data" action="{:U('Order/addsave/')}" method="post">
+        <div class="form-group">
+          <label for="inputEmail3" class="col-sm-2 control-label">姓名</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="inputEmail3" name="username" value="{$item.username}">
+            <input type="hidden"  name="fid" value="{$item.fid}">
+          </div>
+          <p></p>
+          
+          <label for="inputEmail3" class="col-sm-2 control-label">电话</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="inputEmail3" name="usertel" value="{$item.usertel}">
+          </div>
+
+          <label for="inputEmail3" class="col-sm-2 control-label">邮箱</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="inputEmail3" name="useremail" value="{$item.useremail}">
+          </div>
+
+          <label for="inputEmail3" class="col-sm-2 control-label">微信号</label>
+          <div class="col-sm-4">
+            <input type="text" class="form-control" id="inputEmail3" name="gid" value="{$item.gid}">
+          </div>
+
+          <div class="modal-footer">
+            <button type="sumbit" class="btn btn-primary">提交</button>
+          </div>
+        </div>
+      </form>
+    </div>
+</body>
+<!-- END BODY -->
+
+</html>

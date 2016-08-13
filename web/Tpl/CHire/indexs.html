@@ -36,63 +36,53 @@
     <include file="Public:header" />
     <!-- END NAV -->
 
+
     <!-- BEGIN CONTAINER -->
-    <div class="container">
+    <div class="container"> 
       <nav class="navbar bs-docs-nav" role="navigation" style="margin-top:10px;">
         <div class="col-lg-10 col-md-10 col-xs-12">
-          <h1 style="font-size:20px;" class="item_name">{$fooditem.fname}</h1>
+          <form class="form-inline" style="margin-top: 8px" role="form" method="post" action="{:U('CHire/indexs/')}">
+            <div class="form-group col-xs-8">
+              <label class="sr-only" for="exampleInputPassword2"></label>
+              <input type="text" class="form-control" name="id" placeholder="">
+            </div>
+            <button type="submit" style="margin-top: 3px" class="icon-search">
+              <span class="visuallyhidden">search</span>
+            </button>
+          </form>
         </div>
       </nav>
 
       <div class="row">
-        <div class="col-md-3 hidden-xs">
+        <div class="col-md-3 col-sm-6 hidden-xs">
           <include file="Public:cleft" />
         </div>
-
-        <div class="col-md-9 ">
+      
+        <div class="col-md-9 hidden-sm">
           <div class="row top5" >
-            <div class="col-md-6 simpleCart_shelfItem">
-              <div class="well ">
-                <h1 style="font-size:15px;" class="item_name"><i class="fa fa-tag"></i> {$fooditem.ftitle}</h1>
+            <volist name="foodlist" id="vo" offset="0" length='9'>
+            <div class="col-sm-4 simpleCart_shelfItem row-padding">
+              <div class="thumbnail i_list">
+                <a href="{:U('Product/index','id='.$vo['fid'])}" >
+                  <div class="caption">
+                    <h3 class="item_name" align="left">ID: {$vo.fname}</h2>
+                    <h3 class="item_name" align="left">职位: {$vo.ftitle}</h2>
+                    <h3 class="item_name" align="left">地点: {$vo.fpic}</h2>
+                  </div>
+                </a>
               </div>
-              <div class="well ">
-                <h1 style="font-size:15px;" class="item_name"><i class="fa fa-map-marker"></i> {$fooditem.fpic}</h1>
-              </div>
-            </div>        
-          </div>
-        </div>             
-
-        <div style="min-height:400px;padding:10px">
-          <ul role="tablist" class="nav nav-tabs" id="myTab">
-            <li class="active"><a data-toggle="tab" role="tab" href="#home"><i class="fa fa-info"></i></a></li>    
-          </ul>
-          <div class="tab-content" id="myTabContent">
-            <div id="home" class="tab-pane fade in active">
-              <div style="margin-top:10px;line-height:30px;">
-                <pre>{$fooditem.fcontent}</pre>
-              </div> 
             </div>
+            </volist>
           </div>
-        </div>    
-      </div>
-    </div>
 
-    <div class="container navbar-fixed-bottom visible-xs">
-      <div class="row ">
-        <div class="col-md-3 col-xs-6" style="background-color:#99D9EA;">
-          <a class="icon-btn" href="{:U('Order/index/','id='.$fooditem['fid'])}">
-            <h1 style="font-size:20px;" class="item_name"><i class="fa fa-list"></i> 我感兴趣</h1>
-          </a>
-        </div>
-
-        <div class="col-md-3 col-xs-6" style="background-color:#60D9EA;">
-          <a class="icon-btn" href="mailto:hr@emc.com?subject=Job application - {$fooditem.fname}/{$fooditem.ftitle}">
-            <h1 style="font-size:20px;" class="item_name"><i class="fa fa-align-justify"></i> 我要投递</h1>
-            <div></div>
-          </a>
+          <ul class="pagination">{$page}</ul>
         </div>
       </div>
     </div>
+  
+    <!-- BEGIN FOOTER -->
+    <include file="Public:foot" />
+    <!-- END FOOTER -->
 </body>
 <!-- END BODY -->
 
